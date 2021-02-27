@@ -1,0 +1,168 @@
+/*
+
+Objectius:
+- Maquetació per caixes.
+- Distribució per eixos Flex.
+- Diferenciar entre contenidor i item.
+- Ajustar maquetació a tamany pantalla.
+
+Substitueix els quadrants respectius perquè la nova capçalera tingui l'aspecte d'aquest web de turisme al japó
+
+Les opcions cliclables han de tenir efecte roll-over.
+
+Se llama "roll over" a un efecto de las páginas web que consiste en desplegar un pequeño aviso o mensaje cuando el ratón pasa sobre una zona sensible, por ejemplo, una imagen o un enlace.
+
+Els media query creats a l'activitat anterior, s'ha de mantenir.
+El text "Disfruta..." és semitransparent.
+El logo i el fons de la capçalera, els tens adjuntat a l'activitat. La resta d'elements gràfics els hauràs de cercar i que siguin el més semblants possibles.
+__________________________
+
+icons and menu text {color: #757575;}
+h1 {color: #F89594;}
+bg of main {color: #D7D7D7;}
+
+TASKS__________________
+- header: 
+X- ul no style
+X- Nav: row (not social media)
+X- Set rem
+- Align menu items
+- bg: foto
+X- rectangle grey con semitransparencia
+X- font and set semi transparency
+- Margin and paddings
+
+- images: 
+X- marco blanco
+X- fondo gris de su contenedor 
+X- que queden ambas fotos con la misma proporción
+
+- Responsive:
+- Redimension images and logo
+- Responsive img: size related to its vp's size.
+- Logo: set size limits 
+
+- Eliminar código innecesario de html
+
+*/
+
+body {
+    margin: 0rem 1.5rem;
+    font-size: 16px;
+}
+
+body * {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin: 1rem 0rem;
+    padding: 1rem 1 rem;
+    background-image: url("/images/img-bg.jpg");
+    background-color: white;
+    height: 26rem;
+    /* You must set a specified height. SET RELATIVE?*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav {
+    width: 100%;
+    /*needed?*/
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    /* no funciona?? */
+}
+
+.nav-ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu ul {
+    gap: 2rem;
+}
+
+.logo{
+    height: 4rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #757575;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+i {
+    color: #757575;
+    display: flex;
+}
+
+li {
+    display: flex;
+    gap: 1rem;
+    font-size: 1em;
+}
+
+.social-media li {
+    display: flex;
+    gap: 2rem;
+    /* align-self: flex-end; lo envía hacia abajo*/
+}
+
+.social-media ul {
+    display: flex;
+    flex-flow: column;
+    gap: 2em;
+    /* align-self: flex-end; no hace nada */
+}
+
+.quotation {
+    color: #F66B5C;
+    background-color: rgba(0, 0, 0, .05);
+    /* use of de alfa chanel in rgb to show transparency without affecting the child text*/
+    margin: 2rem;
+    padding: 3rem 1rem;
+    font-family: 'Frank Ruhl Libre', serif;
+    text-align: center;
+    display: flex;
+    flex-flow: row;
+    align-items: flex-end; /* no funciona */
+    justify-content: center;
+    gap: .5em;
+}
+
+.quotation h1 {
+    opacity: 60%;
+    font-size: 2.2em;
+}
+
+.quotation img{
+    opacity: 60%;
+    width: 1.5em;
+    color: #F66B5C;
+}
+
+main {
+    background-color: #D7D7D7;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    gap: .5rem; /*necesario o sólo debería justificar?*/
+}
+
+main img {
+    border: .5rem solid white;
+    width: 100%;
+    display: flex;
+    flex-flow: nowrap;
+
+}
